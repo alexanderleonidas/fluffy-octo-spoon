@@ -206,5 +206,9 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Exclude all data files to avoid sending heavy files
+# Exclude all data files, except the necessary one, to avoid sending heavy files
 data/*
+!data/extracted_reviews.csv
+
+# exclude offload folder for llm inference
+offload
