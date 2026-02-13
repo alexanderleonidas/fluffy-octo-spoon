@@ -1,0 +1,20 @@
+@prefix ex: <http://kg-course.io/food-nutrition/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+
+ex:Nutrition a rdfs:Class ;
+    rdfs:comment "Nutritional facts about a recipe" ;
+    rdfs:subClassOf schema1:NutritionInformation .
+
+ex:Recipe a rdfs:Class ;
+    rdfs:comment "A food recipe" ;
+    rdfs:subClassOf schema1:Recipe .
+
+ex:Restaurant a rdfs:Class ;
+    rdfs:comment "An enstablishment that serves food" ;
+    rdfs:subClassOf schema1:FoodEstablishment .
+
+ex:Review a rdfs:Class ;
+    rdfs:comment "A user review" ;
+    rdfs:subClassOf schema1:Review .
+
