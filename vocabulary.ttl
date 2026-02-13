@@ -1,20 +1,178 @@
-@prefix ex: <http://kg-course.io/food-nutrition/> .
+@prefix kgs: <http://kg-course.io/food-nutrition/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Nutrition a rdfs:Class ;
-    rdfs:comment "Nutritional facts about a recipe" ;
-    rdfs:subClassOf schema1:NutritionInformation .
+kgs:extractedIngredient a rdfs:Class .
 
-ex:Recipe a rdfs:Class ;
-    rdfs:comment "A food recipe" ;
-    rdfs:subClassOf schema1:Recipe .
+schema:NutritionInformation a rdfs:Class .
 
-ex:Restaurant a rdfs:Class ;
-    rdfs:comment "An enstablishment that serves food" ;
-    rdfs:subClassOf schema1:FoodEstablishment .
+schema:Recipe a rdfs:Class .
 
-ex:Review a rdfs:Class ;
-    rdfs:comment "A user review" ;
-    rdfs:subClassOf schema1:Review .
+schema:Restaurant a rdfs:Class .
+
+schema:Review a rdfs:Class .
+
+kgs:averageCostOfTwo a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:decimal .
+
+kgs:hasExtractedIngredients a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Review ;
+    rdfs:range kgs:extractedIngredient .
+
+kgs:hasNutrition a rdf:Property ;
+    rdfs:comment "Nutrition information for the recipe"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range schema:NutritionInformation .
+
+kgs:hasOnlineDelivery a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:boolean .
+
+kgs:hasReview a rdf:Property ;
+    rdfs:comment "Reviews for the recipe"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range schema:Review .
+
+kgs:hasSentiment a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Review ;
+    rdfs:range xsd:float .
+
+schema:addressLocality a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:string .
+
+schema:aggregateRating a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:decimal .
+
+schema:author a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Review ;
+    rdfs:range xsd:string .
+
+schema:calories a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:carbohydrateContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:cholesterolContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:cookTime a rdf:Property ;
+    rdfs:comment "The cooking time in minutes"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:decimal .
+
+schema:currenciesAccepted a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:string .
+
+schema:dateModified a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Review ;
+    rdfs:range xsd:dateTime .
+
+schema:datePublished a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe,
+        schema:Review ;
+    rdfs:range xsd:dateTime .
+
+schema:fatContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:fiberContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:image a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:anyURI .
+
+schema:keywords a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:name a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe,
+        schema:Restaurant ;
+    rdfs:range xsd:string .
+
+schema:prepTime a rdf:Property ;
+    rdfs:comment "The preparation time in minutes"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:decimal .
+
+schema:proteinContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:recipeCategory a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:recipeIngredient a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:recipeInstructions a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:reviewBody a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Review ;
+    rdfs:range xsd:string .
+
+schema:saturatedFatContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:servesCuisine a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:string .
+
+schema:sodiumContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
+
+schema:starRating a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Restaurant ;
+    rdfs:range xsd:decimal .
+
+schema:sugarContent a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:decimal .
 
