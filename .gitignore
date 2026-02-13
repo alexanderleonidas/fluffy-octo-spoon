@@ -209,6 +209,8 @@ __marimo__/
 # Exclude all data files, except the necessary one, to avoid sending heavy files
 data/*
 !data/extracted_reviews.csv
+!data/ingredients_wikidata.json
+!data/recipe_cuisine_wikidata.json
 
 # exclude offload folder for llm inference
 offload
