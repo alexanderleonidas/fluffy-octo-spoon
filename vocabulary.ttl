@@ -136,6 +136,11 @@ schema:recipeCategory a rdf:Property ;
     rdfs:domain schema:Recipe ;
     rdfs:range xsd:string .
 
+schema:recipeCuisine a rdf:Property ;
+    rdfs:comment "None"^^xsd:string ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
 schema:recipeIngredient a rdf:Property ;
     rdfs:comment "None"^^xsd:string ;
     rdfs:domain schema:Recipe ;
