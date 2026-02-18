@@ -207,10 +207,10 @@ marimo/_lsp/
 __marimo__/
 
 # Exclude all data files, except the necessary one, to avoid sending heavy files
-data/*
-!data/extracted_reviews.csv
-!data/ingredients_wikidata.json
-!data/recipe_cuisine_wikidata.json
+building_kg/data/*
+!building_kg/data/extracted_reviews.csv
+!building_kg/data/ingredients_wikidata.json
+!building_kg/data/recipe_cuisine_wikidata.json
 
 # exclude offload folder for llm inference
 offload
