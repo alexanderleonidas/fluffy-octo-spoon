@@ -214,3 +214,4 @@ building_kg/data/*
 
 # exclude offload folder for llm inference
 offload
+data/*
